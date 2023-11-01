@@ -1,0 +1,39 @@
+Algorithme_index
+    fonction ExtraireSousTableau(tableau_original: tableau, debut: entier, fin: entier): reel
+    variable
+        sous_tableau: sous_tableau(): entier
+        j, c: entier
+    Debut:
+        pour i <-- debut à fin pas 1 faire
+            c <-- c + 1
+        fin pour
+        Redim(sous_tableau(c))
+        j <-- 0
+        pour i <-- debut à fin pas 1 faire
+            sous_tableau[j] <-- tableau_original[i]
+            j <-- j + 1
+        fin pour
+        retourn sous_tableau
+    fin fonction
+
+variable
+    tableau_original T(10)
+    indice_debut, indice_fin: entier
+    reponse: chaine de caractere
+debut
+    repeter
+        pour i <-- 0 à 9 pas 1 faire
+            Ecrire("Veuillez entrer l'élément ", i, ":")
+            lire(tableau_original(i))
+        fin pour
+        Ecrire("Veuillez entrer l'indice de début :")
+        lire(indice_debut)
+        Ecrire("Veuillez entrer l'indice de fin :")
+        lire(indice_fin)
+
+        resultat = ExtraireSousTableau(tableau_original, indice_debut, indice_fin)
+        Ecrire("Le sous-tableau extrait est : ", resultat)
+
+        Ecrire("Voulez-vous une nouvelle liste ? (oui/non)")
+        lire(reponse)
+    jusqu'à reponse <> "oui"
